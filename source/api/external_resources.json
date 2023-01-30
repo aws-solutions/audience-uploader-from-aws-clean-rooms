@@ -1,0 +1,169 @@
+{
+  "Description": "This AWS CloudFormation template provisions the REST API for the Audience Uploader from AWS Clean Rooms.",
+  "Parameters": {
+    "botoConfig": {
+      "Type": "String",
+      "Description": "Botocore config"
+    },
+    "Version": {
+      "Type": "String",
+      "Description": "Solution version"
+    },
+    "DeploymentPackageBucket": {
+      "Type": "String",
+      "Description": "Bucket that contains the deployment package for Lambda API handlers"
+    },
+    "DeploymentPackageKey": {
+      "Type": "String",
+      "Description": "S3 Key of the deployment package for Lambda API handlers"
+    },
+    "DataBucketName": {
+      "Type": "String",
+      "Description": "S3 bucket containing first-party data object for ingest"
+    },
+    "AmcGlueJobName": {
+      "Type": "String",
+      "Description": "Glue ETL Job name for AMC"
+    }
+  },
+  "Resources": {
+    "ApiHandlerRole": {
+      "Type": "AWS::IAM::Role",
+      "Description": "This role is used by the api lambda when invoked by API Gateway",
+      "Metadata": {
+        "cfn_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "W11",
+              "reason": "The X-Ray policy uses actions that must be applied to all resources. See https://docs.aws.amazon.com/xray/latest/devguide/security_iam_id-based-policy-examples.html#xray-permissions-resources"
+            }
+          ]
+        }
+      },
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:GetObject"
+                  ],
+                  "Resource": {
+                    "Fn::Sub": "arn:aws:s3:::${DataBucketName}/*"
+                  }
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:ListBucket"
+                  ],
+                  "Resource": {
+                    "Fn::Sub": "arn:aws:s3:::${DataBucketName}"
+                  }
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "glue:StartJobRun",
+                    "glue:GetJobRuns"
+                  ],
+                  "Resource": {
+                    "Fn::Sub": "arn:aws:glue:${AWS::Region}:${AWS::AccountId}:job/${AmcGlueJobName}"
+                  }
+                },
+                {
+                  "Action": [
+                    "logs:CreateLogGroup",
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": {
+                    "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/*"
+                  },
+                  "Effect": "Allow",
+                  "Sid": "Logging"
+                },
+                {
+                  "Action": [
+                    "xray:PutTraceSegments",
+                    "xray:PutTelemetryRecords"
+                  ],
+                  "Resource": [
+                    "*"
+                  ],
+                  "Effect": "Allow"
+                }
+              ]
+            },
+            "PolicyName": "ApiHandlerRolePolicy"
+          }
+        ]
+      }
+    },
+    "APIHandler": {
+      "Metadata": {
+        "cfn_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "W89",
+              "reason": "This Lambda function does not need to access any resource provisioned within a VPC."
+            },
+            {
+              "id": "W92",
+              "reason": "This function does not require performance optimization, so the default concurrency limits suffice."
+            }
+          ]
+        }
+      },
+      "Properties": {
+        "Runtime": "python3.9",
+        "Environment": {
+          "Variables": {
+            "botoConfig": {
+              "Ref": "botoConfig"
+            },
+            "VERSION": {
+              "Ref": "Version"
+            },
+            "AMC_GLUE_JOB_NAME": {
+              "Ref": "AmcGlueJobName"
+            }
+          }
+        },
+        "Layers": [
+          "arn:aws:lambda:us-east-1:336392948345:layer:AWSDataWrangler-Python39:9"
+        ],
+        "Role": {
+          "Fn::GetAtt": [
+            "ApiHandlerRole",
+            "Arn"
+          ]
+        },
+        "CodeUri": {
+          "Bucket": {
+            "Ref": "DeploymentPackageBucket"
+          },
+          "Key": {
+            "Ref": "DeploymentPackageKey"
+          }
+        }
+      }
+    }
+  }
+}
