@@ -1,0 +1,153 @@
+Audience Uploader from AWS Clean Rooms Solution
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+Licensed under the Apache License Version 2.0 (the "License"). You may not use this file except
+in compliance with the License. A copy of the License is located at http://www.apache.org/licenses/
+or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+**********************
+THIRD PARTY COMPONENTS
+**********************
+This software includes third party software subject to the following copyrights:
+
+JAVASCRIPT PACKAGES
+
+aws-amplify under the Apache License Version 2.0
+aws-amplify-vue under the Apache License Version 2.0
+boto3 under the Apache License Version 2.0
+botocore under the Apache License Version 2.0
+requests_aws4auth under the Massachusetts Institute of Technology license
+urllib3 under the Massachusetts Institute of Technology license
+Apache Avro under the Apache License 2.0
+AWS Lambda Powertools for Python under the MIT No Attribution license
+AWS SDK under the Apache License Version 2.0
+aws-cdk-lib under Apache License 2.0
+aws-cdk under Apache License 2.0
+aws-solutions-constructs under Apache License 2.0
+black under the Massachusetts Institute of Technology (MIT) license
+requests under the Apache License Version 2.0
+requests-oauthlib under BSD License (ISC)
+chalice under the Apache License Version 2.0
+requests-mock under the Apache License Version 2.0
+crhelper under the Apache License Version 2.0
+cronex under the Massachusetts Institute of Technology (MIT) license
+moto under the Apache License Version 2.0
+path under the Massachusetts Institute of Technology (MIT) license
+pandas under BSD License (BSD-3-Clause)
+parsedatetime under the Apache License Version 2.0
+pytest under the Massachusetts Institute of Technology (MIT) license
+pytest-cov under the Massachusetts Institute of Technology (MIT) license
+pytest-mock under the Massachusetts Institute of Technology (MIT) license
+pytest-env under the Massachusetts Institute of Technology (MIT) license
+PyYAML under the Massachusetts Institute of Technology (MIT) license
+responses under the Apache License Version 2.0
+Click under BSD License (BSD-3-Clause)
+aws-xray-sdk under the Apache License Version 2.0
+wrapt under BSD License (BSD-3-Clause)
+pipenv under the Massachusetts Institute of Technology (MIT) license
+poetry under the Massachusetts Institute of Technology (MIT) license
+tox under the Massachusetts Institute of Technology (MIT) license
+tox-pyenv under the Apache License Version 2.0
+axios under the Massachusetts Institute of Technology (MIT) license
+dropzone under the Massachusetts Institute of Technology (MIT) license
+core-js under the Massachusetts Institute of Technology (MIT) license
+jquery under the Massachusetts Institute of Technology (MIT) license
+jwt-decode under the Massachusetts Institute of Technology (MIT) license
+lodash under the Massachusetts Institute of Technology (MIT) license
+register-service-worker under the Massachusetts Institute of Technology (MIT) license
+vue under the Massachusetts Institute of Technology (MIT) license
+vue-highlightjs under the Massachusetts Institute of Technology (MIT) license
+vue-router under the Massachusetts Institute of Technology (MIT) license
+vuex under the Massachusetts Institute of Technology (MIT) license
+vuex-persistedstate under the Massachusetts Institute of Technology (MIT) license
+@vue/cli-plugin-babel under the Massachusetts Institute of Technology (MIT) license
+@vue/cli-plugin-eslint under the Massachusetts Institute of Technology (MIT) license
+@vue/cli-plugin-pwa under the Massachusetts Institute of Technology (MIT) license
+@vue/cli-service under the Massachusetts Institute of Technology (MIT) license
+bootstrap under the Massachusetts Institute of Technology (MIT) license
+bootstrap-vue under the Massachusetts Institute of Technology (MIT) license
+eslint under the Massachusetts Institute of Technology (MIT) license
+eslint-plugin-vue under the Massachusetts Institute of Technology (MIT) license
+vue-template-compiler under the Massachusetts Institute of Technology (MIT) license
+webpack-subresource-integrity under the Massachusetts Institute of Technology (MIT) license
+babel-eslint under the Massachusetts Institute of Technology (MIT) license
+
+PYTHON PACKAGES
+
+Flask under the BSD License
+Flask-Cors under the MIT License
+Jinja2 under the BSD License
+MarkupSafe under the BSD License
+PyYAML under the MIT License
+Werkzeug under the BSD License
+attrs under the MIT License
+avro under the Apache Software License
+aws-cdk-lib under the Apache-2.0 License
+aws-cdk.aws-servicecatalogappregistry-alpha under the Apache-2.0 License
+aws-lambda-powertools under the MIT License; Other/Proprietary License
+aws-solutions-cdk under the Apache Software License
+aws-solutions-constructs.aws-eventbridge-sqs under the Apache-2.0 License
+aws-solutions-constructs.aws-lambda-sns under the Apache-2.0 License
+aws-solutions-constructs.core under the Apache-2.0 License
+aws-solutions-python under the Apache Software License
+aws-xray-sdk under the Apache Software License
+black under the MIT License
+blessed under the MIT License
+boto3 under the Apache Software License
+botocore under the Apache Software License
+cattrs under the MIT License
+certifi under the Mozilla Public License 2.0 (MPL 2.0)
+cffi under the MIT License
+chalice under the Apache Software License
+charset-normalizer under the MIT License
+click under the BSD License
+constructs under the Apache-2.0 License
+coverage under the Apache Software License
+crhelper under the Apache Software License
+cronex under the MIT License
+cryptography under the Apache Software License; BSD License
+exceptiongroup under the MIT License
+fastjsonschema under the BSD License
+idna under the BSD License
+importlib-metadata under the Apache Software License
+iniconfig under the MIT License
+inquirer under the MIT License
+itsdangerous under the BSD License
+jmespath under the MIT License
+jsii under the Apache Software License
+moto under the Apache Software License
+mypy-extensions under the MIT License
+numpy under the BSD License
+oauthlib under the BSD License
+packaging under the Apache Software License; BSD License
+pandas under the BSD License
+parsedatetime under the Apache Software License
+path under the MIT License
+pathspec under the Mozilla Public License 2.0 (MPL 2.0)
+platformdirs under the MIT License
+pluggy under the MIT License
+publication under the MIT License
+pycparser under the BSD License
+pytest under the MIT License
+pytest-cov under the MIT License
+pytest-env under the MIT License
+pytest-mock under the MIT License
+python-dateutil under the Apache Software License; BSD License
+python-editor under the Apache Software License
+pytz under the MIT License
+readchar under the MIT License
+requests under the Apache Software License
+requests-mock under the Apache Software License
+requests-oauthlib under the BSD License
+responses under the Apache 2.0
+s3transfer under the Apache Software License
+six under the MIT License
+third-party-license-file-generator under the MIT License
+tomli under the MIT License
+typeguard under the MIT License
+typing_extensions under the Python Software Foundation License
+urllib3 under the MIT License
+wrapt under the BSD License
+xmltodict under the MIT License
+zipp under the MIT License

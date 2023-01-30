@@ -1,0 +1,11 @@
+setup.py
+aws_solutions/core/__init__.py
+aws_solutions/core/config.py
+aws_solutions/core/helpers.py
+aws_solutions/core/logging.py
+aws_solutions_python.egg-info/PKG-INFO
+aws_solutions_python.egg-info/SOURCES.txt
+aws_solutions_python.egg-info/dependency_links.txt
+aws_solutions_python.egg-info/not-zip-safe
+aws_solutions_python.egg-info/requires.txt
+aws_solutions_python.egg-info/top_level.txt
