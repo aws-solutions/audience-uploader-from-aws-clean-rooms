@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       python: 3.10
-      nodejs: 14
+      nodejs: 16
     commands:
       - echo "nothing to do in install"
   pre_build:
