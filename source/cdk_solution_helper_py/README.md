@@ -39,7 +39,7 @@ pip install <path>/cdk_solution_helper_py/helpers_cdk    # where <path> is the p
 pip install <path>/cdk_solution_helper_py/helpers_common # where <path> is the path to the solution helper
 ```
 
-# 3. Write CDK code using the helpers 
+## 3. Write CDK code using the helpers 
 
 This might be a file called `app.py` in your CDK application directory
 
@@ -192,7 +192,7 @@ not include the region suffix. See below on how to create the buckets expected b
 > 
 > The `SOLUTION_NAME`, and `VERSION` variables might also be defined in the `cdk.json` file. 
 
-## 3. Upload deployment assets to yur Amazon S3 buckets
+## 6. Upload deployment assets to yur Amazon S3 buckets
 
 Create the CloudFormation bucket defined above, as well as a regional bucket in the region you wish to deploy. The
 CloudFormation template is configured to pull the Lambda deployment packages from Amazon S3 bucket in the region the
@@ -215,7 +215,7 @@ use the --sync option of build-s3-cdk-dist to upload the global and regional ass
 > **Notes**: Choose your desired region by changing region in the above example from us-east-1 to your desired region 
 of the S3 buckets.
 
-## 4. Launch the CloudFormation template
+## 7. Launch the CloudFormation template
 
 * Get the link of `your-solution-name.template` uploaded to your Amazon S3 bucket.
 * Deploy the solution to your account by launching a new AWS CloudFormation stack using the link of the 
