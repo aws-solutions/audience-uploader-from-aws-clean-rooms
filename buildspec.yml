@@ -19,9 +19,6 @@ phases:
       - env
       - chmod +x ./build-s3-dist.sh && ./build-s3-dist.sh --template-bucket ${TEMPLATE_OUTPUT_BUCKET} --code-bucket ${DIST_OUTPUT_BUCKET} --version ${VERSION} --region ${AWS_REGION} --solution-name ${SOLUTION_NAME}  --use_solution_builder_pipeline
       - echo "Build completed `date`"
-      - echo "Starting open-source-dist `date` in `pwd`"
-      - chmod +x ./build-open-source-dist.sh && ./build-open-source-dist.sh $SOLUTION_NAME
-      - echo "Open Source Dist completed `date`"
   post_build:
     commands:
       - echo "Retrieving next stage buildspec `date` in `pwd`"
