@@ -1,0 +1,33 @@
+# Empty .viperlightignore created - none existed
+
+# ignore Config used with code.amazon.com
+Config
+
+# For local desktop build suppression
+.*/node_modules/
+.venv*
+.*/cdk.out/
+deployment/global-s3-assets/
+deployment/regional-s3-assets/
+deployment/regional-assets/
+source/api/.chalice/deployments/
+source/helper/dist/
+
+# Account Id is public and available through an AWS Lambda Managed layer for Lambda Insights extension
+source/infrastructure/lib/snap_uploader_stack.py:90
+source/infrastructure/lib/tiktok_uploader_stack.py:91
+source/api/external_resources.json:150
+
+# Account Id is public and available through an AWS Lambda Managed layer for AWS Data Wrangler Lambda
+deployment/uploader-from-clean-rooms.yaml:214
+source/api/external_resources.json:148
+source/infrastructure/lib/snap_uploader_stack.py:53
+source/infrastructure/lib/snap_uploader_stack.py:80
+source/infrastructure/lib/tiktok_uploader_stack.py:55
+source/infrastructure/lib/tiktok_uploader_stack.py:81
+# Fake email addresses
+README.md:234
+README.md:247
+# Fake test data
+source/tests/glue/test_data/glue_transformation_input.json
+source/sample_data/input_sample_data.json
