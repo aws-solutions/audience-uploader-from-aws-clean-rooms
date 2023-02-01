@@ -7,3 +7,4 @@ echo "rm -rf $open_source_dir"
 rm -rf "$open_source_dir"/
 echo "mkdir -p $open_source_dir"
 mkdir -p "$open_source_dir"
+touch "$open_source_dir/.placeholder"
