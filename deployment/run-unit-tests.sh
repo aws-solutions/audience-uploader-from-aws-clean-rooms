@@ -10,8 +10,7 @@
 # ./run-unit-tests.sh
 #
 
-[ "$DEBUG" == 'true' ] && set -x
-set -e
+set -exuo pipefail
 
 # Get reference for all important folders
 template_dir="$PWD"
