@@ -40,7 +40,7 @@ echo "--------------------------------------------------------------------------
 echo "[Env] Create virtual environment and install dependencies"
 echo "------------------------------------------------------------------------------"
 
-virtualenv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 
 cd $source_dir
