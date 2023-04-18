@@ -9,6 +9,7 @@
 
 source_template_dir="$PWD"
 dist_dir="$source_template_dir/open-source"
+placeholder="$dist_dir/placeholder.txt"
 
 echo "------------------------------------------------------------------------------"
 echo "[Init] Clean old open-source folder"
@@ -18,3 +19,4 @@ set -xeuo pipefail
 
 rm -rf $dist_dir
 mkdir -p $dist_dir
+touch $placeholder
