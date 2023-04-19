@@ -22,3 +22,5 @@ source/tests/coverage-reports
 *.DS_Store
 *.egg-info/
 source/cdk_solution_helper_py/helpers_common/build/
+package-lock.json
+.vscode/

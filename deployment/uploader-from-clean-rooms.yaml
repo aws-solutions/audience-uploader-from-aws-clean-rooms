@@ -43,6 +43,9 @@ Resources:
     DeletionPolicy: "Delete"
     Type: AWS::S3::Bucket
     Properties:
+      OwnershipControls:
+          Rules:
+            - ObjectOwnership: ObjectWriter
       AccessControl: LogDeliveryWrite
       BucketEncryption:
         ServerSideEncryptionConfiguration:
@@ -77,7 +80,6 @@ Resources:
     DependsOn:
       - GetShortUUID
       - ArtifactLogsBucket
-    Description: "Storage for ETL artifacts"
     DeletionPolicy: "Delete"
     Properties:
       BucketName:
