@@ -1,4 +1,4 @@
-name: Pipeline Workflow
+name: Push Workflow
 
 env:
   REGION: us-east-1

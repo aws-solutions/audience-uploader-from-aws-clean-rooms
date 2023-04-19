@@ -114,6 +114,11 @@ def test_bucket_policy_creation(synth_nested_template):
                         "Resource": [{"Fn::Sub": website_bucket}, {"Fn::Sub": website_bucket}],
                         "Condition": {"Bool": {"aws:SecureTransport": False}},
                     },
+                    {
+                        "Effect": "Deny",
+                        "Action": "*",
+                        "Resource": [{"Fn::Sub": website_bucket}],
+                    }
                 ]
             },
         },

@@ -10,3 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial release.
+
+## [1.0.1] - 2023-04-19
+
+### Added
+
+- Update permissions for new S3 bucket defaults
+- Update to various build scripts for version changes
+- Add common GitHub workflows
+- Updates to unit tests for above changes
+

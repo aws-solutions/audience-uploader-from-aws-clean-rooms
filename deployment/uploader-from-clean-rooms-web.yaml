@@ -94,6 +94,9 @@ Resources:
     Description: "Storage for website artifacts"
     DeletionPolicy: "Delete"
     Properties:
+      OwnershipControls:
+          Rules:
+            - ObjectOwnership: ObjectWriter
       AccessControl: LogDeliveryWrite
       BucketName: !GetAtt GetWebsiteBucketName.Data
       BucketEncryption:
@@ -160,6 +163,12 @@ Resources:
             Condition:
               Bool:
                 aws:SecureTransport: false
+          - Effect: Deny
+            Action: "*"
+            Resource:
+              - !Sub "arn:aws:s3:::${WebsiteBucket}/*logs*/*"
+            Principal:
+              CanonicalUser: !GetAtt OriginAccessIdentity.S3CanonicalUserId
 
   WebsiteDistribution:
     Type: AWS::CloudFront::Distribution
