@@ -1,5 +1,8 @@
 # Audience Uploader from AWS Clean Rooms
 
+> [!WARNING]
+> **THIS AWS SOLUTION IS NO LONGER MAINTAINED**
+
 ## Table of Contents
 
 - [Solution Overview](#solution-overview)
